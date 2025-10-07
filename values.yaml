@@ -38,7 +38,16 @@ default:
   securityContext:
    runAsUser: 0
 
-  # Correção para o subchart default
   storageClass:
     create: false
-    name: ""
+    name: local-storage
+
+  persistence:
+    enabled: false
+    size: 1Gi
+    storageClass: local-storage
+
+  persistentVolume:
+    create: false
+    path: /mnt/data/grafana  # Caminho no nó
+    node: worker1
