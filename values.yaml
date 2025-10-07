@@ -9,7 +9,6 @@ fastapi:
     type: ClusterIP    
     port: 6000
   
-  # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
   ingress:
     enabled: true
     className: "nginx"
@@ -21,8 +20,7 @@ fastapi:
            - path: /
              pathType: Prefix
     tls: []
-  
-    
+
   resources:   
     limits:
       cpu: 100m
@@ -30,8 +28,7 @@ fastapi:
     requests:
       cpu: 50m
       memory: 128Mi 
- 
-  
+
   autoscaling:
      enabled: false
      minReplicas: 1
@@ -40,4 +37,8 @@ fastapi:
 
   securityContext:
    runAsUser: 0
-  
+
+# Correção para o subchart default
+storageClass:
+  create: false
+  name: ""
