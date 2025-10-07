@@ -38,7 +38,7 @@ default:
   securityContext:
    runAsUser: 0
 
-# Correção para o subchart default
-storageClass:
-  create: false
-  name: ""
+  # Correção para o subchart default
+  storageClass:
+    create: false
+    name: ""
