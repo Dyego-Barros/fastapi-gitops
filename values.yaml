@@ -1,4 +1,4 @@
-fastapi:
+default:
   replicaCount: 1
   image:
     repository: dyegodev30/k8s  

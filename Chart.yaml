@@ -1,5 +1,5 @@
 apiVersion: v2
-name: fastapi
+name: default
 version: 1.16.0
 dependencies:
   - name: default
